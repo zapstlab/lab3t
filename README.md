@@ -1,21 +1,19 @@
 # Zarządzanie OpenStack przez Cloudify
 
-Pierwsze dwa ćwiczenia nie wymagały współpracy Cloudify z OpenStack w roli VIM (Virtual Infrastructure Manager wg NFV), ponieważ nie tworzyliśmy instancji działających usług. W niniejszym ćwiczeniu wykorzystamy OpenStack w tej roli do wdrożenia prostej usługi chmurowej.
+Pierwsze dwa ćwiczenia nie wymagały współpracy Cloudify z OpenStack, ponieważ nie tworzyliśmy instancji działających usług. W niniejszym ćwiczeniu wykorzystamy OpenStack w roli VIM (Virtual Infrastructure Manager wg NFV)do wdrożenia prostej usługi chmurowej.
 
 Celem ćwiczenia jest skonfigurowane Cloudify do współpracy z OpenStack, a następnie uruchomienie i przygotowanie Blueprintu, który zainstaluje serwer Apache Tomcat na maszynie wirtualnej, a następnie przetestuje jego działanie z poziomu drugiej maszyny wirtualnej z prostym klientem HTTP.
 
-W ramach ćwiczenia ilustrujemy w jaki sposób Cloudify wykorzystuje OpenStack w roli swoistego VIM (Virtual Infrastructure Manager w termonologii NFV) w celu:
+W ramach ćwiczenia ilustrujemy w jaki sposób Cloudify wykorzystuje OpenStack w roli VIM na potrzeby:
 - tworzenia grup zabezpieczeń
 - tworzenia sieci
 - tworzenia routerów
 - tworzenia maszyn wirtualnych
 - uruchamiania skryptów konfiguracyjnych na maszynach wirtualnych.
 
-Uprzednio należy skonfigurować dostęp Cloudify do OpenStack podając parametry dostępu do OpenStack pozyskane w pierwszym ćwiczeniu (Krok 1 poniżej).
-
 ### KROK 1: Konfiguracja OpenStack w Cloudify
 
-Z użyciem polecenia cfy należy ustawić tzw. secret values w Cloudify, które będą przechowywać parametry autentykacji Cloudify w OpenStack:
+Przed przystąpieniem do realizacji głównej części ćwiczenia należy skonfigurować dostęp Cloudify do OpenStack podając parametry dostępu do OpenStack pozyskane w pierwszym ćwiczeniu. W tym celu, z użyciem polecenia cfy, należy ustawić tzw. secret values w Cloudify, które będą przechowywać parametry autentykacji Cloudify w OpenStack:
 
 ```
 cfy secrets list
