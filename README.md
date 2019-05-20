@@ -11,6 +11,9 @@ W ramach ćwiczenia ilustrujemy w jaki sposób Cloudify wykorzystuje OpenStack w
 - tworzenia maszyn wirtualnych
 - uruchamiania skryptów konfiguracyjnych na maszynach wirtualnych.
 
+Wybrane przydatne linki w tym ćwiczeniu:
+- funkcje wewnętrzne (intrinsic functions) Cloudify https://cloudify.co/guide/3.1/dsl-spec-intrinsic-functions.html
+
 ### KROK 1: Konfiguracja OpenStack w Cloudify
 
 Przed przystąpieniem do realizacji głównej części ćwiczenia należy skonfigurować dostęp Cloudify do OpenStack podając parametry dostępu do OpenStack pozyskane w pierwszym ćwiczeniu. W tym celu, z użyciem polecenia cfy, należy ustawić tzw. secret values w Cloudify, które będą przechowywać parametry autentykacji Cloudify w OpenStack:
