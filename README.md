@@ -1,6 +1,8 @@
 # Zarządzanie OpenStack przez Cloudify
 
-Celem tego ćwiczenia jet skonfigurowane Cloudify do pracy z OpenStack, a następnie uruchomienie i przygotowanie Blueprintu, który zainstaluje serwer Apache Tomcat na maszynie wirtualnej, a następnie przetestuje jego działanie z poziomu drugiej maszyny wirtualnej z prostym klientem HTTP.
+Pierwsze dwa ćwiczenia nie wymagały współpracy Cloudify z OpenStack w roli VIM (Virtual Infrastructure Manager wg NFV), ponieważ nie tworzyliśmy instancji działających usług. W niniejszym ćwiczeniu wykorzystamy OpenStack w tej roli do wdrożenia prostej usługi chmurowej.
+
+Celem ćwiczenia jest skonfigurowane Cloudify do współpracy z OpenStack, a następnie uruchomienie i przygotowanie Blueprintu, który zainstaluje serwer Apache Tomcat na maszynie wirtualnej, a następnie przetestuje jego działanie z poziomu drugiej maszyny wirtualnej z prostym klientem HTTP.
 
 W ramach ćwiczenia ilustrujemy w jaki sposób Cloudify wykorzystuje OpenStack w roli swoistego VIM (Virtual Infrastructure Manager w termonologii NFV) w celu:
 - tworzenia grup zabezpieczeń
@@ -32,7 +34,7 @@ cfy secrets create os_tenant_name -s cloudify-test
 cfy secrets create os_keystone_url -s http://192.168.186.11:5000/v3
 cfy secrets create os_region -s RegionOne
 ```
-Parametry należy odczytać z pliku openrc.sh utworzonego w ćwiczeniu 1, natomiast nazwę regionu należy odczytać z użyciem CLI openstack skonfigurowanego w pierwszym ćwiczeniu (w dokumentacji CLI OpenStack znajdź sposód odczytania listy regionów).
+Parametry należy odczytać z pliku openrc.sh utworzonego w ćwiczeniu 1, natomiast nazwę regionu należy odczytać z użyciem CLI openstack skonfigurowanego w pierwszym ćwiczeniu (w dokumentacji CLI OpenStack znajdź sposób odczytania listy regionów).
 
 ### KROK 2: Urchomienie Serwera Apache Tomcat
 
