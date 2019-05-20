@@ -1,15 +1,15 @@
-# Zarządzanie OpenStack przez  cloudify
+# Zarządzanie OpenStack przez Cloudify
 
-Celem tego ćwiczenia jet skonfigurowane Cloudify do pracy z OpenStack, a następnie uruchomienie i przygotowanie Blueprintu, który zainstaluje serwer Apache Tomcat na maszynie wirtualnej, a nastepnie przetestuje jego działanie z poziomu drugiej maszyny wirtualnej z prostym klientem HTTP.
+Celem tego ćwiczenia jet skonfigurowane Cloudify do pracy z OpenStack, a następnie uruchomienie i przygotowanie Blueprintu, który zainstaluje serwer Apache Tomcat na maszynie wirtualnej, a następnie przetestuje jego działanie z poziomu drugiej maszyny wirtualnej z prostym klientem HTTP.
 
-Ćwiczenie pokazę w jaki sposób Cloudiy w OpenStack:
-- tworzy grupy zabezpieczeń
-- tworzy sieci
-- tworzy routery
-- tworzy maszyny wirtualne
-- jak uruchamiać skrypty konfiguracyjne na maszynach wirtualnych
+W ramach ćwiczenia ilustrujemy, w jaki sposób Cloudify wykorzystuje OpenStack w roli swoistego VIM (Virtual Infrastructure Manager w termonologii NFV) w celu:
+- tworzenia grup zabezpieczeń
+- tworzenia sieci
+- tworzenia routerów
+- tworzenia maszyn wirtualnych
+- uruchamiania skryptów konfiguracyjnych na maszynach wirtualnych.
 
-Uprzednio należy również skonfigurować dostęp Cloudify do OpenStack podając parametry dostępu do OpenStack pozyskane w pierwszej części ćwiczenia.
+Uprzednio należy skonfigurować dostęp Cloudify do OpenStack podając parametry dostępu do OpenStack pozyskane w pierwszym ćwiczeniu (Krok 1 poniżej).
 
 ### KROK 1: Konfiguracja OpenStack w Cloudify
 Z użyciem polecenia cfy należy ustawić tzw. secret values w Cloudify, które będą przechowywać parametry autentykacji Cloudify w OpenStack
@@ -25,13 +25,13 @@ cfy secrets create os_region -s <region name>
 cfy secrets list
 cfy secrets get os_keystone_url
 
-cfy secrets create os_username -s rajewluk
-cfy secrets create os_password -s t6ygfr5
+cfy secrets create os_username -s twojlogin
+cfy secrets create os_password -s twojehaslo
 cfy secrets create os_tenant_name -s cloudify-test
 cfy secrets create os_keystone_url -s http://192.168.186.11:5000/v3
 cfy secrets create os_region -s RegionOne
 ```
-Parametry należy odczytać z pliku openrc.sh - utworzonego w poprzednim ćwiczeniu, natomiast nazwę regionu należy odczytać z użyciem CLI openstack skonfigurowanego w pierwszym ćwiczeniu
+Parametry należy odczytać z pliku openrc.sh utworzonego w ćwiczeniu 1, natomiast nazwę regionu należy odczytać z użyciem CLI openstack skonfigurowanego w pierwszym ćwiczeniu.
 
 ### KROK 2: Urchomienie Serwera Apache Tomcat
 
@@ -44,29 +44,29 @@ Parametry należy odczytać z pliku openrc.sh - utworzonego w poprzednim ćwicze
 ```
 Wejdź to dashboard Cloudify oraz przejrzyj zawartość utworzonego deploymentu. Zauważ sekcje z wartościami wejściowymi oraz wartościami wyjściowymi. Prześledź zależności pomiędzy tworzonymi obiektami w blueprincie oraz porównaj jego strukturę ze strukturą wzorca HEAT dla OpenStack wykorzystanego uprzednio do instalacji Cloudify Managera.
 
-- Uruchom workflow isnstalacyjny dla uprzednio utworzonego deploymentu
+- Uruchom workflow instalacyjny dla uprzednio utworzonego deploymentu:
 
 ```
 cfy executions start -d openstack-dep install
 ```
 
-Będac w dashboard ze szczegółami utworzonego deploymentu naciśnij wiersz z poleceniem "Install" - uruchomi to podgląd i zarazem wizualizację procesy instalacji maszyny w OpenStack razem z zależnościami.
+Będąc w dashboard ze szczegółami utworzonego deploymentu naciśnij wiersz z poleceniem "Install" - uruchomi to podgląd i zarazem wizualizację procesu instalacji maszyny w OpenStack razem z zależnościami.
 
-- Aby uzyskać bezpośredni dostęp do utworzonej maszyny wirtualnej musisz przegrać klucz prywatny utworzony rzez Cloudify 
+- Aby uzyskać bezpośredni dostęp do utworzonej maszyny wirtualnej musisz wgrać do niej klucz prywatny utworzony przez Cloudify.
 ```
 sudo cp /etc/cloudify/.ssh/id_rsa /home/centos/key.pem 
 sudo chown centos:centos /home/centos/key.pem 
 chmod 400 /home/centos/key.pem 
 ```
-- Dostep do maszyny można uzyskać wykonując następujące polecenie
+- Dostęp do maszyny można uzyskać wykonując następujące polecenie:
 ```
-ssh -i /home/centos/key.pem  ubuntu@{vm_external_ip}
+ssh -i /home/centos/key.pem ubuntu@{vm_external_ip}
 ```
 
-- Odczytaj zewnętrzny adres IP serwera HTTP i za pomocą przeglądarki zweryfikuj, że masz do niego dostęp
+- Odczytaj zewnętrzny adres IP serwera HTTP i za pomocą przeglądarki zweryfikuj, że masz do niego dostęp.
 
 ### KROK 3: Weryfikacja działania serwera za pomocą zewnętrznego klienta HTTP
 - Utwórz nowy blueprint o nazwie blueprint-ext.yaml, który będzie rozwinięciem tego używanego w kroku 2. 
-- Zmodyfikuj grupę zabezpieczeń tak, by dostep do portu 80 możliwy był tylko z sieci prywatnej oraz by nie był możliwy dostęp z zewnątrz np. z poziomu przeglądarki internetowej
-- Utwórz razem z serwerem HTTP dodatkową maszynę wirtualną, której celem będzie weryfikacja dostępu do serwera HTTP. Do samej weryfikacji połączenia wykorzystaj skrypt connection.sh, który powinien być wywoływany w momencie tworzenia zależności/interfejsu między serwerem HTTP, a klientem HTTP. 
-- Po wykonaniu instalacji odczytaj zewnętrzny adres IP serwera HTTP i za pomocą przeglądarki zweryfikuj, że nie masz teraz do niego dostępu
+- Zmodyfikuj grupę zabezpieczeń tak, by dostep do portu 80 możliwy był tylko z sieci prywatnej oraz by nie był możliwy dostęp z zewnątrz np. z poziomu przeglądarki internetowej.
+- Utwórz razem z serwerem HTTP dodatkową maszynę wirtualną, której celem będzie weryfikacja dostępu do serwera HTTP. Do samej weryfikacji połączenia wykorzystaj skrypt connection.sh, który powinien być wywoływany w momencie tworzenia. zależności/interfejsu między serwerem HTTP, a klientem HTTP. 
+- Po wykonaniu instalacji odczytaj zewnętrzny adres IP serwera HTTP i za pomocą przeglądarki zweryfikuj, że nie masz teraz do niego dostępu.
