@@ -73,6 +73,6 @@ ssh -i /home/centos/key.pem ubuntu@{vm_external_ip}
 - Utwórz razem z serwerem HTTP dodatkową maszynę wirtualną, której celem będzie weryfikacja dostępu do serwera HTTP. Do samej weryfikacji połączenia wykorzystaj skrypt connection.sh, który powinien być wywoływany w momencie tworzenia. zależności/interfejsu między serwerem HTTP, a klientem HTTP. 
 - Po wykonaniu instalacji odczytaj zewnętrzny adres IP serwera HTTP i za pomocą przeglądarki zweryfikuj, że nie masz teraz do niego dostępu.
 
-# Sprawozdanie
+# Sprawozdanie z ćwiczenia
 
-W spawozdaniu udokumentuj poszczególne kroki ćwiczenia w  
+Udokumentuj poszczególne kroki ćwiczenia zachowując odpowiednią numerację rozdziałów. W odrębnym punkcie podsumuj całe ćwiczenie.
