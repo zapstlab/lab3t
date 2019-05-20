@@ -12,7 +12,7 @@ W ramach ćwiczenia ilustrujemy w jaki sposób Cloudify wykorzystuje OpenStack w
 - uruchamiania skryptów konfiguracyjnych na maszynach wirtualnych.
 
 Wybrane przydatne linki w tym ćwiczeniu:
-- funkcje wewnętrzne (intrinsic functions) Cloudify https://cloudify.co/guide/3.1/dsl-spec-intrinsic-functions.html
+- funkcje wewnętrzne (intrinsic functions) Cloudify https://docs.cloudify.co/4.6/developer/blueprints/spec-intrinsic-functions/
 - OpenStack CLI https://docs.openstack.org/python-openstackclient/ocata/command-list.html
 
 ### KROK 1: Konfiguracja OpenStack w Cloudify
