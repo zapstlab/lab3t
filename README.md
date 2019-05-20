@@ -72,3 +72,7 @@ ssh -i /home/centos/key.pem ubuntu@{vm_external_ip}
 - Zmodyfikuj grupę zabezpieczeń tak, by dostep do portu 80 możliwy był tylko z sieci prywatnej oraz by nie był możliwy dostęp z zewnątrz np. z poziomu przeglądarki internetowej.
 - Utwórz razem z serwerem HTTP dodatkową maszynę wirtualną, której celem będzie weryfikacja dostępu do serwera HTTP. Do samej weryfikacji połączenia wykorzystaj skrypt connection.sh, który powinien być wywoływany w momencie tworzenia. zależności/interfejsu między serwerem HTTP, a klientem HTTP. 
 - Po wykonaniu instalacji odczytaj zewnętrzny adres IP serwera HTTP i za pomocą przeglądarki zweryfikuj, że nie masz teraz do niego dostępu.
+
+# Sprawozdanie
+
+W spawozdaniu udokumentuj poszczególne kroki ćwiczenia w  
