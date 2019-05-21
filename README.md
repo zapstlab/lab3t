@@ -17,7 +17,7 @@ Wybrane przydatne linki w tym ćwiczeniu:
 - funkcje wewnętrzne (intrinsic functions) Cloudify https://docs.cloudify.co/4.6/developer/blueprints/spec-intrinsic-functions/
 - OpenStack CLI https://docs.openstack.org/python-openstackclient/ocata/command-list.html
 
-UWAGA: w ramach ćwiczenia należy wykonać szereg zaplanowanych kroków. Oczywiście jest możliwe poszerzenie zakresu eksperymentów we własnym zakresie, a nietrywialne i udokumentowane w sprawozdaniu próby będa uhonorowane bonusowymi punktami w wysokości do 20% maksymalnej oceny za całe ćwiczenie.
+UWAGA: w ramach ćwiczenia należy wykonać szereg zaplanowanych kroków. Oczywiście jest możliwe poszerzenie zakresu eksperymentów we własnym zakresie, a nietrywialne i udokumentowane w sprawozdaniu próby będą honorowane bonusowymi punktami w wysokości do 20% maksymalnej nominalnej oceny za całe ćwiczenie.
 
 # Przebieg ćwiczenia
 
