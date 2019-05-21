@@ -40,8 +40,8 @@ cfy secrets get os_keystone_url
 
 przykład:
 ```
-cfy secrets create os_username -s twojlogin
-cfy secrets create os_password -s twojehaslo
+cfy secrets create os_username -s mojlogin
+cfy secrets create os_password -s mojehaslo
 cfy secrets create os_tenant_name -s cloudify-test
 cfy secrets create os_keystone_url -s http://192.168.186.11:5000/v3
 cfy secrets create os_region -s RegionOne
