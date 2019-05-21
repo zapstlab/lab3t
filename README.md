@@ -1,3 +1,5 @@
+## UWAGA: poniższy tekst pomocy nie jest już spójny z tekstem w gałęzi master - aktualna wersja tekstu jest w master.
+
 # Zarządzanie OpenStack przez  cloudify
 
 Celem tego ćwiczenia jet skonfigurowane Cloudify do pracy z OpenStack, a następnie uruchomienie i przygotowanie Blueprintu, który zainstaluje serwer Apache Tomcat na maszynie wirtualnej, a nastepnie przetestuje jego działanie z poziomu drugiej maszyny wirtualnej z prostym klientem HTTP.
