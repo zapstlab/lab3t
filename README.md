@@ -30,7 +30,7 @@ UWAGA: w ramach ćwiczenia należy wykonać szereg zaplanowanych kroków. Oczywi
 
 Przed przystąpieniem do realizacji głównej części ćwiczenia należy skonfigurować dostęp Cloudify do OpenStack podając parametry dostępu do OpenStack pozyskane w pierwszym ćwiczeniu. W tym celu, z użyciem polecenia cfy, należy ustawić tzw. secret values w Cloudify, które będą przechowywać parametry uwierzytelnienia Cloudify w OpenStack:
 
-ogólna forma:
+#### ogólna forma:
 ```
 cfy secrets list
 cfy secrets create os_username -s <username>
@@ -42,7 +42,7 @@ cfy secrets create os_region -s <region name>
 cfy secrets list
 cfy secrets get os_keystone_url
 ```
-przykład:
+#### przykład:
 ```
 cfy secrets create os_username -s mojlogin
 cfy secrets create os_password -s mojehaslo
