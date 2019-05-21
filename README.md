@@ -1,4 +1,4 @@
-## UWAGA: poniższy tekst pomocy nie jest już spójny z tekstem w gałęzi master - aktualna wersja tekstu jest w master.
+## UWAGA: poniższy tekst pomocy nie jest już spójny z tekstem w gałęzi master - aktualna wersja tekstu jest tylko w master.
 
 # Zarządzanie OpenStack przez  cloudify
 
