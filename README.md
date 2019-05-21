@@ -23,7 +23,7 @@ UWAGA: w ramach ćwiczenia należy wykonać szereg zaplanowanych kroków. Oczywi
 
 ### KROK 1: Konfiguracja OpenStack w Cloudify
 
-Przed przystąpieniem do realizacji głównej części ćwiczenia należy skonfigurować dostęp Cloudify do OpenStack podając parametry dostępu do OpenStack pozyskane w pierwszym ćwiczeniu. W tym celu, z użyciem polecenia cfy, należy ustawić tzw. secret values w Cloudify, które będą przechowywać parametry autentykacji Cloudify w OpenStack:
+Przed przystąpieniem do realizacji głównej części ćwiczenia należy skonfigurować dostęp Cloudify do OpenStack podając parametry dostępu do OpenStack pozyskane w pierwszym ćwiczeniu. W tym celu, z użyciem polecenia cfy, należy ustawić tzw. secret values w Cloudify, które będą przechowywać parametry uwierzytelnienia Cloudify w OpenStack:
 
 ```
 cfy secrets list
@@ -42,7 +42,7 @@ cfy secrets create os_tenant_name -s cloudify-test
 cfy secrets create os_keystone_url -s http://192.168.186.11:5000/v3
 cfy secrets create os_region -s RegionOne
 ```
-Parametry należy odczytać z pliku openrc.sh utworzonego w ćwiczeniu 1, natomiast nazwę regionu należy odczytać z użyciem CLI openstack skonfigurowanego w pierwszym ćwiczeniu (w dokumentacji CLI OpenStack znajdź sposób odczytania listy regionów).
+Parametry należy odczytać z pliku openrc.sh utworzonego w ćwiczeniu 1, natomiast nazwę regionu należy odczytać z użyciem CLI openstack skonfigurowanego w pierwszym ćwiczeniu (w dokumentacji CLI OpenStack znajdź sposób odczytania listy regionów; otwarcie terminala z linią poleceń openstack opisamo w ćwiczeniu 1).
 
 ### KROK 2: Urchomienie Serwera Apache Tomcat
 
