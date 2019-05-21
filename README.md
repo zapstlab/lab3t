@@ -77,10 +77,10 @@ ssh -i /home/centos/key.pem ubuntu@{vm_external_ip}
 ### KROK 3: Weryfikacja działania serwera za pomocą zewnętrznego klienta HTTP
 
 - Utwórz nowy blueprint o nazwie blueprint-ext.yaml, który będzie rozwinięciem tego używanego w kroku 2. 
-- Zmodyfikuj grupę zabezpieczeń tak, by dostep do portu 80 możliwy był tylko z sieci prywatnej oraz by nie był możliwy dostęp z zewnątrz np. z poziomu przeglądarki internetowej.
-- Utwórz razem z serwerem HTTP dodatkową maszynę wirtualną, której celem będzie weryfikacja dostępu do serwera HTTP. Do samej weryfikacji połączenia wykorzystaj skrypt connection.sh, który powinien być wywoływany w momencie tworzenia. zależności/interfejsu między serwerem HTTP, a klientem HTTP. 
+- Zmodyfikuj grupę zabezpieczeń tak, aby dostęp do portu 80 możliwy był tylko z sieci prywatnej oraz nie był możliwy z zewnątrz, np. z poziomu przeglądarki internetowej.
+- Utwórz razem z serwerem HTTP dodatkową maszynę wirtualną, której celem będzie weryfikacja dostępu do serwera HTTP. Do samej weryfikacji połączenia wykorzystaj skrypt connection.sh, który powinien być wywoływany w momencie tworzenia zależności/ interfejsu między serwerem HTTP a klientem HTTP. 
 - Po wykonaniu instalacji odczytaj zewnętrzny adres IP serwera HTTP i za pomocą przeglądarki zweryfikuj, że nie masz teraz do niego dostępu.
 
 # Sprawozdanie z ćwiczenia
 
-Udokumentuj poszczególne kroki ćwiczenia zachowując odpowiednią numerację rozdziałów. W odrębnym punkcie podsumuj całe ćwiczenie.
+Udokumentuj poszczególne kroki ćwiczenia zachowując odpowiednią numerację rozdziałów. W odrębnym punkcie podsumuj całe ćwiczenie. 
