@@ -15,7 +15,7 @@ W ramach ćwiczenia ilustrujemy w jaki sposób Cloudify wykorzystuje OpenStack w
 - tworzenia maszyn wirtualnych
 - uruchamiania skryptów konfiguracyjnych na maszynach wirtualnych.
 
-## Wybrane linki przydatne ćwiczeniu
+## Wybrane odnośniki przydatne ćwiczeniu
 
 - blueprints https://docs.cloudify.co/4.6/developer/blueprints/
     * DSL definitions https://docs.cloudify.co/4.2.0/blueprints/spec-dsl-definitions/
@@ -53,7 +53,7 @@ cfy secrets create os_region -s RegionOne
 
 Parametry do powyższych sekretów należy odczytać z pliku openrc.sh utworzonego w ćwiczeniu 1, natomiast nazwę regionu należy odczytać z użyciem CLI openstack skonfigurowanego w pierwszym ćwiczeniu (WSKAZÓWKA: w dokumentacji CLI OpenStack znajdź sposób odczytania listy regionów; otwarcie terminala z linią poleceń openstack opisano w ćwiczeniu 1).
 
-UWAGA: sekrety w Cloudify to wygodny mechanizm zapamiętywania parametrów, do których następnie można się odwoływać w różnych konstrukcjach Cloudify, np. w linii poleceń cfy czy blueprintach. Jednocześnie sekrety to jedna z funkcji wewnętrznych Cloudify (tzw. intrinsic functions); więcej o funkcjach wewnętrznych znajdziesz pod linkiem podanym w części "Wybrane linki przydatne ćwiczeniu".
+UWAGA: sekrety w Cloudify to wygodny mechanizm zapamiętywania parametrów, do których następnie można się odwoływać w różnych konstrukcjach Cloudify, np. w linii poleceń cfy czy blueprintach. Jednocześnie sekrety to jedna z funkcji wewnętrznych Cloudify (tzw. intrinsic functions); więcej o funkcjach wewnętrznych znajdziesz pod adresem podanym w części "Wybrane odnośniki przydatne ćwiczeniu".
 
 ## KROK 2: Urchomienie Serwera Apache Tomcat
 
