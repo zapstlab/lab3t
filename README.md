@@ -1,4 +1,4 @@
-# ĆWICZENIE: Wykorzystanie przez Cloudify platformy OpenStack w roli VIM
+# ĆWICZENIE: Wykorzystanie OpenStack w roli VIM przez Cloudify w roli orkiestratora usług
 
 ### Wprowadzenie
 
