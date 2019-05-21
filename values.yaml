@@ -1,4 +1,4 @@
-external_network_name: Instances
+external_network_name: ONAP_Instances
 mgt_router_id: 77ece7f8-9578-4738-ad3d-c7adeb3df90e
 image_id: de9c10fb-21c9-4b7d-b0a0-f3f9fec722f4
 flavor_id: 2
