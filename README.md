@@ -1,4 +1,4 @@
-# Zarządzanie OpenStack przez Cloudify
+# ĆWIECZENIE: Zarządzanie OpenStack przez Cloudify
 
 Pierwsze dwa ćwiczenia nie wymagały współpracy Cloudify z OpenStack, ponieważ nie tworzyliśmy instancji działających usług. W niniejszym ćwiczeniu wykorzystamy OpenStack w roli VIM (Virtual Infrastructure Manager wg NFV) do wdrożenia prostej usługi chmurowej.
 
