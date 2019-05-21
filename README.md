@@ -1,6 +1,6 @@
 # ĆWICZENIE: Wykorzystanie przez Cloudify platformy OpenStack w roli VIM
 
-Pierwsze dwa ćwiczenia nie wymagały współpracy Cloudify z OpenStack, ponieważ nie tworzyliśmy instancji działających usług (utworzenie maszyny managera Cloudify skryptem Openstack/Heat nie wchodzi w zakres takiej współpracy). W niniejszym ćwiczeniu wykorzystamy OpenStack w roli VIM (Virtual Infrastructure Manager wg NFV) do wdrożenia prostej usługi chmurowej.
+Pierwsze dwa ćwiczenia nie wymagały współpracy Cloudify z OpenStack, ponieważ nie tworzyliśmy instancji działających usług (utworzenie maszyny managera Cloudify skryptem Openstack/Heat nie wchodzi w zakres takiej współpracy). W niniejszym ćwiczeniu, z poziomu Cloudify, wykorzystamy OpenStack w roli VIM (Virtual Infrastructure Manager wg NFV) do wdrożenia prostej usługi chmurowej.
 
 Celem ćwiczenia jest skonfigurowane Cloudify do współpracy z OpenStack, a następnie uruchomienie i przygotowanie Blueprintu, który zainstaluje serwer Apache Tomcat na maszynie wirtualnej, a następnie przetestuje jego działanie z poziomu drugiej maszyny wirtualnej z prostym klientem HTTP.
 
