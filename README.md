@@ -52,14 +52,14 @@ UWAGA: sekrety w Cloudify to wygodny mechanizm zapamiętywania parametrów, do k
 
 ### KROK 2: Urchomienie Serwera Apache Tomcat
 
-- Zerknij w zawartość Bluprintu blueprint.yaml i przygotuj plik z wartościami wejściowymi dla niego. Jego wzorzec znajdziesz w repozytorium pod nazwą values.yaml. Zauważ, że jako wymagane są tylko wartości, które w Blueprincie nie mają zdefiniowanych wartości domyślnych. Identyfikator odmiany maszyny oraz identyfikator obrazu Ubuntu 14.04 odczytaj za pomocą CLI openstack.
+- Zerknij w zawartość Bluprintu blueprint.yaml i przygotuj plik z wartościami wejściowymi dla blueprintu, właściwymi dla Twojego projektu. Wzorzec tego pliku wejściowego znajdziesz w repozytorium pod nazwą values.yaml. Zauważ, że jako wymagane są tylko te parametry wejściowe, które w Blueprincie nie mają zdefiniowanych wartości domyślnych. Identyfikator odmiany maszyny oraz identyfikator obrazu Ubuntu 14.04 odczytaj za pomocą CLI openstack.
 
 ```
  cfy blueprint upload -b openstack ./blueprint.yaml
  cfy deployments create -b openstack openstack-dep --inputs values.yaml
  
 ```
-Wejdź to dashboard Cloudify oraz przejrzyj zawartość utworzonego deploymentu. Zauważ sekcje z wartościami wejściowymi oraz wartościami wyjściowymi. Prześledź zależności pomiędzy tworzonymi obiektami w blueprincie oraz porównaj jego strukturę ze strukturą wzorca HEAT dla OpenStack wykorzystanego w ćwiczeniu 1 do instalacji Cloudify Managera; skomentuj podobieństwa między nimi.
+Wejdź to dashboard Cloudify oraz przejrzyj zawartość utworzonego deploymentu. Zauważ sekcje z wartościami wejściowymi oraz wartościami wyjściowymi. Prześledź zależności pomiędzy tworzonymi obiektami w blueprincie oraz porównaj jego strukturę ze strukturą wzorca HEAT dla OpenStack wykorzystanego w ćwiczeniu 1 do instalacji Cloudify Managera; skomentuj główne podobieństwa między nimi.
 
 - Uruchom workflow instalacyjny dla uprzednio utworzonego deploymentu:
 
