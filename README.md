@@ -1,8 +1,8 @@
 # ĆWICZENIE: Wykorzystanie OpenStack w roli VIM przez Cloudify w roli NFVO
 
 ### Terminy NFVO i VIM stosujemy tu w rozumieniu architektury ETSI NFV.
-3 
-### Wprowadzenie
+# 
+## Wprowadzenie
 
 Pierwsze dwa ćwiczenia nie wymagały współpracy Cloudify z OpenStack, ponieważ nie tworzyliśmy instancji działających usług (utworzenie maszyny managera Cloudify skryptem Openstack/Heat nie wchodzi w zakres takiej współpracy). W niniejszym ćwiczeniu, z poziomu Cloudify pełniącego funckje NFVO, wykorzystamy OpenStack w roli VIM do wdrożenia prostej usługi chmurowej.
 
@@ -15,7 +15,7 @@ W ramach ćwiczenia ilustrujemy w jaki sposób Cloudify wykorzystuje OpenStack w
 - tworzenia maszyn wirtualnych
 - uruchamiania skryptów konfiguracyjnych na maszynach wirtualnych.
 
-### Wybrane linki przydatne w tym ćwiczeniu
+## Wybrane linki przydatne w tym ćwiczeniu
 
 - blueprints https://docs.cloudify.co/4.6/developer/blueprints/
     * DSL definitions https://docs.cloudify.co/4.2.0/blueprints/spec-dsl-definitions/
@@ -26,7 +26,7 @@ UWAGA: w ramach ćwiczenia należy wykonać szereg zaplanowanych kroków. Oczywi
 
 # Przebieg ćwiczenia
 
-### KROK 1: Konfiguracja OpenStack w Cloudify
+## KROK 1: Konfiguracja OpenStack w Cloudify
 
 Przed przystąpieniem do realizacji głównej części ćwiczenia należy skonfigurować dostęp Cloudify do OpenStack podając parametry dostępu do OpenStack pozyskane w pierwszym ćwiczeniu. W tym celu, z użyciem polecenia cfy, należy ustawić tzw. secret values w Cloudify, które będą przechowywać parametry uwierzytelnienia Cloudify w OpenStack:
 
@@ -55,7 +55,7 @@ Parametry do powyższych sekretów należy odczytać z pliku openrc.sh utworzone
 
 UWAGA: sekrety w Cloudify to wygodny mechanizm zapamiętywania parametrów, do których następnie można się odwoływać w różnych konstrukcjach Cloudify, np. w linii poleceń cfy czy blueprintach. Jednocześnie sekrety to jedna z funkcji wewnętrznych Cloudify (tzw. intrinsic functions); więcej o funkcjach wewnętrznych znajdziesz pod linkiem podanym w pierwszej części instrukcji.
 
-### KROK 2: Urchomienie Serwera Apache Tomcat
+## KROK 2: Urchomienie Serwera Apache Tomcat
 
 - Zerknij w zawartość Bluprintu blueprint.yaml i przygotuj plik z wartościami wejściowymi dla blueprintu, właściwymi dla Twojego projektu. Wzorzec tego pliku wejściowego znajdziesz w repozytorium pod nazwą values.yaml. Zauważ, że jako wymagane są tylko te parametry wejściowe, które w Blueprincie nie mają zdefiniowanych wartości domyślnych. Identyfikator odmiany maszyny oraz identyfikator obrazu Ubuntu 14.04 odczytaj za pomocą CLI openstack. Samo wykorzystanie pliku values.yaml ma w naszym ćwiczeniu zilustrować dość elastyczną formę dostarczania parametrów wejściowych do blueprintu: z (dpodatkowych) plików zewnętrznych.
 
@@ -87,7 +87,7 @@ ssh -i /home/centos/key.pem ubuntu@{vm_external_ip}
 
 - Odczytaj zewnętrzny adres IP serwera HTTP i za pomocą przeglądarki zweryfikuj, że masz do niego dostęp.
 
-### KROK 3: Weryfikacja działania serwera za pomocą zewnętrznego klienta HTTP
+## KROK 3: Weryfikacja działania serwera za pomocą zewnętrznego klienta HTTP
 
 - Utwórz nowy blueprint o nazwie np. blueprint-ext.yaml, który będzie rozwinięciem tego używanego w kroku 2. 
 - Zmodyfikuj grupę zabezpieczeń tak, aby dostęp do portu 80 możliwy był tylko z sieci prywatnej oraz nie był możliwy z zewnątrz, np. z poziomu przeglądarki internetowej.
