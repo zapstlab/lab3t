@@ -15,7 +15,7 @@ W ramach ćwiczenia ilustrujemy w jaki sposób Cloudify wykorzystuje OpenStack w
 - tworzenia maszyn wirtualnych
 - uruchamiania skryptów konfiguracyjnych na maszynach wirtualnych.
 
-## Wybrane linki przydatne w tym ćwiczeniu
+## Wybrane linki przydatne ćwiczeniu
 
 - blueprints https://docs.cloudify.co/4.6/developer/blueprints/
     * DSL definitions https://docs.cloudify.co/4.2.0/blueprints/spec-dsl-definitions/
