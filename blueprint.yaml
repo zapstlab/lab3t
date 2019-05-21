@@ -32,9 +32,8 @@ inputs:
     description: Nazwa sieci external do polaczen ssh
     
   mgt_router_id:
-    description: Nazwa routera podlaczonego do sieci external
+    description: Id routera podlaczonego do sieci external
     
-
   nameservers:
     default: [8.8.4.4, 8.8.8.8]
 
