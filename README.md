@@ -17,7 +17,7 @@ Wybrane przydatne linki w tym ćwiczeniu:
 - funkcje wewnętrzne (intrinsic functions) Cloudify https://docs.cloudify.co/4.6/developer/blueprints/spec-intrinsic-functions/
 - OpenStack CLI https://docs.openstack.org/python-openstackclient/ocata/command-list.html
 
-
+W ramach ćwiczenia należy wykonać szereg zaplanowanych kroków. Oczywiście jest możliwe poszerzenie zakresu eksperymentów we własnym zakresie, a nietrywialne i udokumentowane w sprawozdaniu próby będa uhonorowane bonusowymi punktami w wysokości do 20% maksymalnej oceny za całe ćwiczenie. 
 
 ### KROK 1: Konfiguracja OpenStack w Cloudify
 
@@ -76,9 +76,9 @@ ssh -i /home/centos/key.pem ubuntu@{vm_external_ip}
 
 ### KROK 3: Weryfikacja działania serwera za pomocą zewnętrznego klienta HTTP
 
-- Utwórz nowy blueprint o nazwie blueprint-ext.yaml, który będzie rozwinięciem tego używanego w kroku 2. 
+- Utwórz nowy blueprint o nazwie np. blueprint-ext.yaml, który będzie rozwinięciem tego używanego w kroku 2. 
 - Zmodyfikuj grupę zabezpieczeń tak, aby dostęp do portu 80 możliwy był tylko z sieci prywatnej oraz nie był możliwy z zewnątrz, np. z poziomu przeglądarki internetowej.
-- Utwórz razem z serwerem HTTP dodatkową maszynę wirtualną, której celem będzie weryfikacja dostępu do serwera HTTP. Do samej weryfikacji połączenia wykorzystaj skrypt connection.sh, który powinien być wywoływany w momencie tworzenia zależności/ interfejsu między serwerem HTTP a klientem HTTP. 
+- Utwórz razem z serwerem HTTP dodatkową maszynę wirtualną, której celem będzie weryfikacja dostępu do serwera HTTP. Do samej weryfikacji połączenia wykorzystaj skrypt connection.sh, który powinien być wywoływany w momencie tworzenia zależności / interfejsu między serwerem HTTP a klientem HTTP. 
 - Po wykonaniu instalacji odczytaj zewnętrzny adres IP serwera HTTP i za pomocą przeglądarki zweryfikuj, że nie masz teraz do niego dostępu.
 
 # Sprawozdanie z ćwiczenia
