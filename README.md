@@ -49,7 +49,7 @@ cfy secrets create os_keystone_url -s http://192.168.186.11:5000/v3
 cfy secrets create os_region -s RegionOne
 ```
 
-Parametry do powyższych sekretów należy odczytać z pliku openrc.sh utworzonego w ćwiczeniu 1, natomiast nazwę regionu należy odczytać z użyciem CLI openstack skonfigurowanego w pierwszym ćwiczeniu (w dokumentacji CLI OpenStack znajdź sposób odczytania listy regionów; otwarcie terminala z linią poleceń openstack opisamo w ćwiczeniu 1).
+Parametry do powyższych sekretów należy odczytać z pliku openrc.sh utworzonego w ćwiczeniu 1, natomiast nazwę regionu należy odczytać z użyciem CLI openstack skonfigurowanego w pierwszym ćwiczeniu (WSKAZÓWKA: w dokumentacji CLI OpenStack znajdź sposób odczytania listy regionów; otwarcie terminala z linią poleceń openstack opisano w ćwiczeniu 1).
 
 UWAGA: sekrety w Cloudify to wygodny mechanizm zapamiętywania parametrów, do których następnie można się odwoływać w różnych konstrukcjach Cloudify, np. w linii poleceń cfy czy blueprintach. Jednocześnie sekrety to jedna z funkcji wewnętrznych Cloudify (tzw. intrinsic functions); więcej o funkcjach wewnętrznych znajdziesz pod linkiem podanym w pierwszej części instrukcji.
 
