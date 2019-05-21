@@ -1,5 +1,7 @@
 # ĆWICZENIE: Wykorzystanie przez Cloudify platformy OpenStack w roli VIM
 
+### Wprowadzenie
+
 Pierwsze dwa ćwiczenia nie wymagały współpracy Cloudify z OpenStack, ponieważ nie tworzyliśmy instancji działających usług (utworzenie maszyny managera Cloudify skryptem Openstack/Heat nie wchodzi w zakres takiej współpracy). W niniejszym ćwiczeniu, z poziomu Cloudify, wykorzystamy OpenStack w roli VIM (Virtual Infrastructure Manager wg NFV) do wdrożenia prostej usługi chmurowej.
 
 Celem ćwiczenia jest skonfigurowane Cloudify do współpracy z OpenStack, a następnie uruchomienie i przygotowanie Blueprintu, który zainstaluje serwer Apache Tomcat na maszynie wirtualnej, a następnie przetestuje jego działanie z poziomu drugiej maszyny wirtualnej z prostym klientem HTTP.
@@ -11,7 +13,8 @@ W ramach ćwiczenia ilustrujemy w jaki sposób Cloudify wykorzystuje OpenStack w
 - tworzenia maszyn wirtualnych
 - uruchamiania skryptów konfiguracyjnych na maszynach wirtualnych.
 
-Wybrane przydatne linki w tym ćwiczeniu:
+### Wybrane linki przydatne w tym ćwiczeniu
+
 - blueprints https://docs.cloudify.co/4.6/developer/blueprints/
     * DSL definitions https://docs.cloudify.co/4.2.0/blueprints/spec-dsl-definitions/
 - funkcje wewnętrzne (intrinsic functions) Cloudify https://docs.cloudify.co/4.6/developer/blueprints/spec-intrinsic-functions/
@@ -48,7 +51,7 @@ cfy secrets create os_region -s RegionOne
 
 Parametry do powyższych sekretów należy odczytać z pliku openrc.sh utworzonego w ćwiczeniu 1, natomiast nazwę regionu należy odczytać z użyciem CLI openstack skonfigurowanego w pierwszym ćwiczeniu (w dokumentacji CLI OpenStack znajdź sposób odczytania listy regionów; otwarcie terminala z linią poleceń openstack opisamo w ćwiczeniu 1).
 
-UWAGA: sekrety w Cloudify to wygodny mechanizm zapamiętywania parametrów, do których następnie będzie można się odwoływać w różnych konstrukcjach Cloudify, np. w linii poleceń cfy czy blueprintach.
+UWAGA: sekrety w Cloudify to wygodny mechanizm zapamiętywania parametrów, do których następnie można się odwoływać w różnych konstrukcjach Cloudify, np. w linii poleceń cfy czy blueprintach. Sekrety to jedna z funkcji wewnętrznych CLoudify (tzw. intrinsic functions), a więcej o funkcjach wewnętrznych znajdziesz pod linkiem podanym w pierwszej części instrukcji.
 
 ### KROK 2: Urchomienie Serwera Apache Tomcat
 
