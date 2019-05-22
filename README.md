@@ -9,11 +9,14 @@ Pierwsze dwa ćwiczenia nie wymagały współpracy Cloudify z OpenStack, poniewa
 Celem ćwiczenia jest skonfigurowane Cloudify do współpracy z OpenStack, a następnie uruchomienie i przygotowanie Blueprintu, który zainstaluje serwer Apache Tomcat na maszynie wirtualnej, a następnie przetestuje jego działanie z poziomu drugiej maszyny wirtualnej z prostym klientem HTTP.
 
 W ramach ćwiczenia ilustrujemy w jaki sposób Cloudify wykorzystuje OpenStack w roli VIM na potrzeby:
+
 - tworzenia grup zabezpieczeń
 - tworzenia sieci
 - tworzenia routerów
 - tworzenia maszyn wirtualnych
 - uruchamiania skryptów konfiguracyjnych na maszynach wirtualnych.
+
+UWAGA: w ramach ćwiczenia należy wykonać szereg zaplanowanych kroków. Oczywiście jest możliwe poszerzenie zakresu eksperymentów we własnym zakresie, a nietrywialne i udokumentowane w sprawozdaniu próby, zwłaszcza dotyczące nowych elementów, będą honorowane bonusowymi punktami w wysokości do 20% maksymalnej nominalnej oceny za całe ćwiczenie.
 
 ## Wybrane odnośniki przydatne ćwiczeniu
 
@@ -21,8 +24,6 @@ W ramach ćwiczenia ilustrujemy w jaki sposób Cloudify wykorzystuje OpenStack w
     * DSL definitions https://docs.cloudify.co/4.2.0/blueprints/spec-dsl-definitions/
 - funkcje wewnętrzne (intrinsic functions) Cloudify https://docs.cloudify.co/4.6/developer/blueprints/spec-intrinsic-functions/
 - OpenStack CLI https://docs.openstack.org/python-openstackclient/ocata/command-list.html
-
-UWAGA: w ramach ćwiczenia należy wykonać szereg zaplanowanych kroków. Oczywiście jest możliwe poszerzenie zakresu eksperymentów we własnym zakresie, a nietrywialne i udokumentowane w sprawozdaniu próby, zwłaszcza dotyczące nowych elementów, będą honorowane bonusowymi punktami w wysokości do 20% maksymalnej nominalnej oceny za całe ćwiczenie.
 
 # Przebieg ćwiczenia
 
