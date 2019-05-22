@@ -1,4 +1,4 @@
-# ĆWICZENIE: Wykorzystanie OpenStack w roli VIM przez Cloudify w roli NFVO
+# ĆWICZENIE: Wykorzystanie OpenStack w roli VIM przez orkiestrator Cloudify pełniący rolę NFVO
 
 ### Terminy NFVO i VIM stosujemy tu w rozumieniu architektury ETSI NFV.
 # 
